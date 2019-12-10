@@ -1,0 +1,23 @@
+{
+  "name": "todo-comment-organizer",
+  "version": "0.0.1",
+  "main": "index.js",
+  "author": "Emil Buszło",
+  "license": "MIT",
+  "scripts": {
+    "tsc": "tsc",
+    "dev": "ts-node-dev --respawn --transpileOnly src/index.ts",
+    "start": "tsc && node lib/server.js"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "readdirp": "^3.3.0",
+    "typescript": "^3.7.3"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.2",
+    "@types/node": "^12.12.16",
+    "ts-node": "^8.5.4",
+    "ts-node-dev": "^1.0.0-pre.44"
+  }
+}
