@@ -1,7 +1,7 @@
 import path from 'path';
 import minimalist from 'minimist';
 import { printHelp } from './modules/helpModule';
-const readdirp = require('readdirp');
+import { printAllToDo } from './modules/printFileModule';
 
 const args = minimalist(process.argv.slice(2), {
   boolean: ['help'],
@@ -19,7 +19,7 @@ function getUnknowCommand() {
   return true;
 }
 
-const projectPath = process.argv[2] ? path.resolve(process.argv[2]) : 'src';
+const projectPath = args.print ? path.resolve(args.print) : 'src';
 
 // function testt() {
 //   console.log(args);
@@ -32,6 +32,8 @@ function appRunner(args: { [key: string]: boolean | string | string[] }) {
   if (args.help) {
     return printHelp();
   } else if (args.print) {
+    console.log(projectPath);
+    printAllToDo(projectPath);
   } else if (args['create-issue']) {
   } else if (args['set-config']) {
   } else {
